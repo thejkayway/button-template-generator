@@ -1,0 +1,26 @@
+.App {
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 1.8vmin);
+  text-align: left;
+  color: white;
+}
+
+.App-upload-button {
+  border-radius: 0.2em;
+  cursor: pointer;
+  font-size: large;
+  padding: 0.5em;
+}
+.ReactCrop-image {
+  display: block;
+  max-width: calc(90vh);
+  max-height: calc(90vh);
+}

@@ -1,0 +1,57 @@
+.CropModal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.CropModal-content {
+  background-color: #fefefe;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 1.5em;
+  border: 2px solid #888;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.CropModal-close {
+  color: rgb(37, 37, 37);
+  right: 0;
+  top: 0;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  margin: 0.5em;
+}
+
+.CropModal-close:hover,
+.CropModal-close:focus {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.CropModal-download-button {
+  background-color: #e1e9fc;
+  border: 1px solid rgb(171, 171, 182);
+  border-radius: 0.2em;
+  cursor: pointer;
+  font-size: calc(10px + 1vmin);
+  font-weight: bold;
+  margin: 1em;
+  padding: 0.5em;
+}
+
+.CropModal-download-button:hover {
+  background-color: #e6ecfa;
+}
