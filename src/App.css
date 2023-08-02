@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 1.8vmin);
+  text-align: left;
   color: white;
 }
 
@@ -16,6 +17,7 @@
   border-radius: 0.2em;
   cursor: pointer;
   font-size: large;
+  padding: 0.5em;
 }
 .ReactCrop-image {
   display: block;

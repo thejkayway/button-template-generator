@@ -10,6 +10,8 @@ type Circle = {
 const DPI = 300;
 const PAGE_WIDTH = 8.5 * DPI;
 const PAGE_HEIGHT = 11 * DPI;
+const BUTTON_DIAMETER = 2.063 * DPI;
+const BUTTON_RADIUS = BUTTON_DIAMETER / 2;
 const BUTTON_GUIDE_DIAMETER = 2.625 * DPI;
 const BUTTON_GUIDE_RADIUS = BUTTON_GUIDE_DIAMETER / 2;
 const BUTTON_HORIZONTAL_MARGIN = (PAGE_WIDTH - 3 * BUTTON_GUIDE_DIAMETER) / 4;
@@ -27,6 +29,69 @@ const ROW_THREE_CENTER =
   ROW_TWO_CENTER + BUTTON_GUIDE_DIAMETER + BUTTON_VERTICAL_MARGIN;
 const ROW_FOUR_CENTER =
   ROW_THREE_CENTER + BUTTON_GUIDE_DIAMETER + BUTTON_VERTICAL_MARGIN;
+
+const BUTTON_OUTLINES = [
+  {
+    xCenter: COLUMN_ONE_CENTER,
+    yCenter: ROW_ONE_CENTER,
+    radius: BUTTON_RADIUS,
+  },
+  {
+    xCenter: COLUMN_ONE_CENTER,
+    yCenter: ROW_TWO_CENTER,
+    radius: BUTTON_RADIUS,
+  },
+  {
+    xCenter: COLUMN_ONE_CENTER,
+    yCenter: ROW_THREE_CENTER,
+    radius: BUTTON_RADIUS,
+  },
+  {
+    xCenter: COLUMN_ONE_CENTER,
+    yCenter: ROW_FOUR_CENTER,
+    radius: BUTTON_RADIUS,
+  },
+  {
+    xCenter: COLUMN_TWO_CENTER,
+    yCenter: ROW_ONE_CENTER,
+    radius: BUTTON_RADIUS,
+  },
+  {
+    xCenter: COLUMN_TWO_CENTER,
+    yCenter: ROW_TWO_CENTER,
+    radius: BUTTON_RADIUS,
+  },
+  {
+    xCenter: COLUMN_TWO_CENTER,
+    yCenter: ROW_THREE_CENTER,
+    radius: BUTTON_RADIUS,
+  },
+  {
+    xCenter: COLUMN_TWO_CENTER,
+    yCenter: ROW_FOUR_CENTER,
+    radius: BUTTON_RADIUS,
+  },
+  {
+    xCenter: COLUMN_THREE_CENTER,
+    yCenter: ROW_ONE_CENTER,
+    radius: BUTTON_RADIUS,
+  },
+  {
+    xCenter: COLUMN_THREE_CENTER,
+    yCenter: ROW_TWO_CENTER,
+    radius: BUTTON_RADIUS,
+  },
+  {
+    xCenter: COLUMN_THREE_CENTER,
+    yCenter: ROW_THREE_CENTER,
+    radius: BUTTON_RADIUS,
+  },
+  {
+    xCenter: COLUMN_THREE_CENTER,
+    yCenter: ROW_FOUR_CENTER,
+    radius: BUTTON_RADIUS,
+  },
+];
 
 const BUTTON_GUIDE_OUTLINES = [
   {
@@ -108,20 +173,18 @@ export async function canvasTemplate(image: HTMLImageElement, crop: Crop) {
   ctx.save();
   ctx.beginPath();
   ctx.strokeStyle = "rgba(0,0,0,0.0)";
-  BUTTON_GUIDE_OUTLINES.forEach((circle) => drawCircle(ctx, circle));
+  BUTTON_OUTLINES.forEach((circle) => drawCircle(ctx, circle));
   ctx.clip();
-  BUTTON_GUIDE_OUTLINES.forEach((circle) =>
-    drawImage(ctx, image, circle, crop)
-  );
+  BUTTON_OUTLINES.forEach((circle) => drawImage(ctx, image, circle, crop));
   ctx.stroke();
   ctx.closePath();
   ctx.restore();
 
   // draw our cutting guide outlines
-  // ctx.beginPath();
-  // BUTTON_GUIDE_OUTLINES.forEach((circle) => drawCircle(ctx, circle));
-  // ctx.stroke();
-  // ctx.closePath();
+  ctx.beginPath();
+  BUTTON_GUIDE_OUTLINES.forEach((circle) => drawCircle(ctx, circle));
+  ctx.stroke();
+  ctx.closePath();
 
   // save the image
   const link = document.createElement("a");
