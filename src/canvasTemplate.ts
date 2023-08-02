@@ -30,69 +30,6 @@ const ROW_THREE_CENTER =
 const ROW_FOUR_CENTER =
   ROW_THREE_CENTER + BUTTON_GUIDE_DIAMETER + BUTTON_VERTICAL_MARGIN;
 
-const BUTTON_OUTLINES = [
-  {
-    xCenter: COLUMN_ONE_CENTER,
-    yCenter: ROW_ONE_CENTER,
-    radius: BUTTON_RADIUS,
-  },
-  {
-    xCenter: COLUMN_ONE_CENTER,
-    yCenter: ROW_TWO_CENTER,
-    radius: BUTTON_RADIUS,
-  },
-  {
-    xCenter: COLUMN_ONE_CENTER,
-    yCenter: ROW_THREE_CENTER,
-    radius: BUTTON_RADIUS,
-  },
-  {
-    xCenter: COLUMN_ONE_CENTER,
-    yCenter: ROW_FOUR_CENTER,
-    radius: BUTTON_RADIUS,
-  },
-  {
-    xCenter: COLUMN_TWO_CENTER,
-    yCenter: ROW_ONE_CENTER,
-    radius: BUTTON_RADIUS,
-  },
-  {
-    xCenter: COLUMN_TWO_CENTER,
-    yCenter: ROW_TWO_CENTER,
-    radius: BUTTON_RADIUS,
-  },
-  {
-    xCenter: COLUMN_TWO_CENTER,
-    yCenter: ROW_THREE_CENTER,
-    radius: BUTTON_RADIUS,
-  },
-  {
-    xCenter: COLUMN_TWO_CENTER,
-    yCenter: ROW_FOUR_CENTER,
-    radius: BUTTON_RADIUS,
-  },
-  {
-    xCenter: COLUMN_THREE_CENTER,
-    yCenter: ROW_ONE_CENTER,
-    radius: BUTTON_RADIUS,
-  },
-  {
-    xCenter: COLUMN_THREE_CENTER,
-    yCenter: ROW_TWO_CENTER,
-    radius: BUTTON_RADIUS,
-  },
-  {
-    xCenter: COLUMN_THREE_CENTER,
-    yCenter: ROW_THREE_CENTER,
-    radius: BUTTON_RADIUS,
-  },
-  {
-    xCenter: COLUMN_THREE_CENTER,
-    yCenter: ROW_FOUR_CENTER,
-    radius: BUTTON_RADIUS,
-  },
-];
-
 const BUTTON_GUIDE_OUTLINES = [
   {
     xCenter: COLUMN_ONE_CENTER,
