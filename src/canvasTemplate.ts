@@ -173,18 +173,20 @@ export async function canvasTemplate(image: HTMLImageElement, crop: Crop) {
   ctx.save();
   ctx.beginPath();
   ctx.strokeStyle = "rgba(0,0,0,0.0)";
-  BUTTON_OUTLINES.forEach((circle) => drawCircle(ctx, circle));
+  BUTTON_GUIDE_OUTLINES.forEach((circle) => drawCircle(ctx, circle));
   ctx.clip();
-  BUTTON_OUTLINES.forEach((circle) => drawImage(ctx, image, circle, crop));
+  BUTTON_GUIDE_OUTLINES.forEach((circle) =>
+    drawImage(ctx, image, circle, crop)
+  );
   ctx.stroke();
   ctx.closePath();
   ctx.restore();
 
   // draw our cutting guide outlines
-  ctx.beginPath();
-  BUTTON_GUIDE_OUTLINES.forEach((circle) => drawCircle(ctx, circle));
-  ctx.stroke();
-  ctx.closePath();
+  // ctx.beginPath();
+  // BUTTON_GUIDE_OUTLINES.forEach((circle) => drawCircle(ctx, circle));
+  // ctx.stroke();
+  // ctx.closePath();
 
   // save the image
   const link = document.createElement("a");
